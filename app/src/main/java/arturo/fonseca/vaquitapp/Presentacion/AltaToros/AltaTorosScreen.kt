@@ -457,6 +457,8 @@ fun AltaTorosScreen(db: FirebaseFirestore,navController: NavController) {
                     onClick = {
                         saveToros( db, Toros( nombre, color, raza, nacimiento, procedencia, cornamenta, siniiga, campania, hierro))
                         Toast.makeText(context , R.string.mensaje_exito, Toast.LENGTH_SHORT).show()
+                         // Navegar a la pantalla listaToros
+                        navController.navigate("ListaToros")
                     },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color.Black, // Fondo negro
