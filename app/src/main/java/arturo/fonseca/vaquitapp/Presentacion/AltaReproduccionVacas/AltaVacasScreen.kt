@@ -364,6 +364,8 @@ fun AltaVacasScreen(db: FirebaseFirestore, navController: NavController) {
                     onClick = {
                         saveVaca(db, Vacas(nombre, color, raza, cruza, selectedDate, siniiga, campania, peso, cornamenta, procedencia))
                         Toast.makeText( context, "Vaca guardada", Toast.LENGTH_SHORT).show()
+                         // Navegar a la pantalla listaVacas
+                        navController.navigate("ListaVacas")
                               },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color.Black, // Fondo negro
