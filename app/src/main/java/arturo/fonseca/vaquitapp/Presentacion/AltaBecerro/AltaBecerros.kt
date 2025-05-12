@@ -523,7 +523,7 @@ fun AltaBecerros(db: FirebaseFirestore, navController: NavController) {
                         saveBecerro(db, Becerros( nombre, sexo, nacimiento, peso, madre, padre, embrion, procedencia, siniiga, campania))
                         Toast.makeText(context , R.string.mensaje_exito, Toast.LENGTH_SHORT).show()
                         // Navegar a la pantalla listaBecerros
-                        navController.navigate("ListaVacas")
+                        navController.navigate("ListaBecerros")
                     },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color.Black, // Fondo negro
