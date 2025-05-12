@@ -17,8 +17,8 @@ import kotlinx.coroutines.withContext
 
 class ListaGeneralModel: ViewModel() {
     private var db: FirebaseFirestore = Firebase.firestore
-     private val _becerros = MutableStateFlow <List<Becerros>>(emptyList())
-     val becerros:StateFlow<List<Becerros>> = _becerros
+    private val _becerros = MutableStateFlow <List<Becerros>>(emptyList())
+    val becerros:StateFlow<List<Becerros>> = _becerros
 
     private val _vacas = MutableStateFlow <List<Vacas>>(emptyList())
     val vacas:StateFlow<List<Vacas>> = _vacas
@@ -27,8 +27,9 @@ class ListaGeneralModel: ViewModel() {
     val toros:StateFlow<List<Toros>> = _toros
 
     init {
-        getBecerros()
+
         getVacas()
+        getBecerros()
         getToros()
     }
 

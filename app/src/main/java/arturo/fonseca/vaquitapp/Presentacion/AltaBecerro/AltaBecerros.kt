@@ -12,6 +12,7 @@ import androidx.compose.foundation.shape.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Switch
@@ -21,6 +22,8 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.ui.*
 import androidx.compose.ui.draw.*
 import androidx.compose.ui.graphics.*
+import androidx.compose.ui.graphics.Color.Companion.Black
+import androidx.compose.ui.graphics.Color.Companion.Blue
 
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -42,6 +45,8 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.util.Calendar
 
+
+@OptIn(ExperimentalMaterial3Api::class)
 
 @Composable
 fun AltaBecerros(db: FirebaseFirestore, navController: NavController) {
@@ -137,6 +142,9 @@ fun AltaBecerros(db: FirebaseFirestore, navController: NavController) {
                             onValueChange = {nombre = it},
                             label = {Text("Nombre")},
                             textStyle = TextStyle(color = Color.Black),
+                            colors = TextFieldDefaults.outlinedTextFieldColors(
+                                focusedBorderColor = Blue,
+                                unfocusedBorderColor = Black),
                             modifier = Modifier
                                 .height(50.dp)
 
@@ -162,6 +170,9 @@ fun AltaBecerros(db: FirebaseFirestore, navController: NavController) {
                             onValueChange = {sexo = it},
                             label = {Text("Sexo")},
                             textStyle = TextStyle(color = Color.Black),
+                            colors = TextFieldDefaults.outlinedTextFieldColors(
+                                focusedBorderColor = Blue,
+                                unfocusedBorderColor = Black),
                             modifier = Modifier
                                 .height(50.dp)
                         )
@@ -254,6 +265,10 @@ fun AltaBecerros(db: FirebaseFirestore, navController: NavController) {
                     value = peso,
                     onValueChange = {peso = it},
                     label = {Text("Peso")},
+                    textStyle = TextStyle(color = Color.Black),
+                    colors = TextFieldDefaults.outlinedTextFieldColors(
+                        focusedBorderColor = Blue,
+                        unfocusedBorderColor = Black),
                     modifier = Modifier
                         .height(50.dp)
                         .fillMaxWidth()
@@ -291,6 +306,9 @@ fun AltaBecerros(db: FirebaseFirestore, navController: NavController) {
                         onValueChange = {madre = it},
                         label = {Text("Madre")},
                         textStyle = TextStyle(color = Color.Black),
+                        colors = TextFieldDefaults.outlinedTextFieldColors(
+                            focusedBorderColor = Blue,
+                            unfocusedBorderColor = Black),
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(50.dp)
@@ -312,6 +330,9 @@ fun AltaBecerros(db: FirebaseFirestore, navController: NavController) {
                         onValueChange = {padre = it},
                         label = {Text("Padre")},
                         textStyle = TextStyle(color = Color.Black),
+                        colors = TextFieldDefaults.outlinedTextFieldColors(
+                            focusedBorderColor = Blue,
+                            unfocusedBorderColor = Black),
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(50.dp)
@@ -383,6 +404,9 @@ fun AltaBecerros(db: FirebaseFirestore, navController: NavController) {
                     onValueChange = {embrion = it},
                     label = {Text("Información del semen/embrion")},
                     textStyle = TextStyle(color = Color.Black),
+                    colors = TextFieldDefaults.outlinedTextFieldColors(
+                        focusedBorderColor = Blue,
+                        unfocusedBorderColor = Black),
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp)
@@ -406,6 +430,9 @@ fun AltaBecerros(db: FirebaseFirestore, navController: NavController) {
                     onValueChange = {procedencia = it},
                     label = {Text("Procedencia")},
                     textStyle = TextStyle(color = Color.Black),
+                    colors = TextFieldDefaults.outlinedTextFieldColors(
+                        focusedBorderColor = Blue,
+                        unfocusedBorderColor = Black),
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp)
@@ -436,6 +463,9 @@ fun AltaBecerros(db: FirebaseFirestore, navController: NavController) {
                         onValueChange = { siniiga = it },
                         label = { Text("Número SINIIGA") },
                         textStyle = TextStyle(color = Color.Black),
+                        colors = TextFieldDefaults.outlinedTextFieldColors(
+                            focusedBorderColor = Blue,
+                            unfocusedBorderColor = Black),
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
                         singleLine = true,
                         maxLines = 1,
@@ -487,6 +517,9 @@ fun AltaBecerros(db: FirebaseFirestore, navController: NavController) {
                             onValueChange = { campania = it },
                             placeholder = { Text("Campaña") },
                             textStyle = TextStyle(color = Color.Black),
+                            colors = TextFieldDefaults.outlinedTextFieldColors(
+                                focusedBorderColor = Blue,
+                                unfocusedBorderColor = Black),
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .height(50.dp)

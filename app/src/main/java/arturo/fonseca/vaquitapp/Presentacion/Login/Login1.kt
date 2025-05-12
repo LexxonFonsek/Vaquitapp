@@ -2,21 +2,25 @@ package arturo.fonseca.vaquitapp.Presentacion.Login
 
 
 import android.util.Log
-import androidx.compose.runtime.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.OutlinedTextField
+import androidx.compose.material.TextFieldColors
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.runtime.*
 import androidx.compose.ui.*
-
 import androidx.compose.ui.graphics.*
-
+import androidx.compose.ui.graphics.Color.Companion.Black
+import androidx.compose.ui.graphics.Color.Companion.Blue
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -26,10 +30,9 @@ import androidx.navigation.NavController
 import arturo.fonseca.vaquitapp.R
 import arturo.fonseca.vaquitapp.navigation.appScreens
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 
 fun Login1(auth: FirebaseAuth, navController: NavController) {
@@ -75,7 +78,12 @@ fun Login1(auth: FirebaseAuth, navController: NavController) {
         OutlinedTextField(
             value = usuario,
             onValueChange = { usuario = it },
-            label = { Text("Usuario") },
+            label = { Text(text = "Usuario") },
+            textStyle = TextStyle(color = Color.Black),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = Blue,
+                unfocusedBorderColor = Black),
+
             modifier = Modifier.fillMaxWidth()
         )
 
@@ -87,6 +95,10 @@ fun Login1(auth: FirebaseAuth, navController: NavController) {
             label = { Text("Contraseña") },
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+            textStyle = TextStyle(color = Color.Black),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = Blue,
+                unfocusedBorderColor = Black),
             modifier = Modifier.fillMaxWidth()
         )
 

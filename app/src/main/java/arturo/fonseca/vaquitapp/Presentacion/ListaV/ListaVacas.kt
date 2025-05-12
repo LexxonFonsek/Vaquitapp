@@ -55,7 +55,7 @@ fun ListaVacas(db: FirebaseFirestore, viewModel: ListaVacasModel = ListaVacasMod
 fun vacaItem(vacas: Vacas) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Image(
-            painter = painterResource(id = R.drawable.becerroicon), //Imagen del logo Vaquitapp
+            painter = painterResource(id = R.drawable.vaca), //Imagen del logo Vaquitapp
             contentDescription = "VacaIcon",
             modifier = Modifier.size(100.dp)
         )

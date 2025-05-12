@@ -56,7 +56,7 @@ fun ListaToros(db: FirebaseFirestore, viewModel: ListaTorosModel = ListaTorosMod
 fun toroItem(toros: Toros) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Image(
-            painter = painterResource(id = R.drawable.becerroicon), //Imagen del logo Vaquitapp
+            painter = painterResource(id = R.drawable.toro), //Imagen del logo Vaquitapp
             contentDescription = "ToroIcon",
             modifier = Modifier.size(100.dp)
         )

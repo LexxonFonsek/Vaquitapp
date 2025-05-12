@@ -12,6 +12,7 @@ import androidx.compose.foundation.shape.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Switch
@@ -21,6 +22,8 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.ui.*
 import androidx.compose.ui.draw.*
 import androidx.compose.ui.graphics.*
+import androidx.compose.ui.graphics.Color.Companion.Black
+import androidx.compose.ui.graphics.Color.Companion.Blue
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -42,6 +45,7 @@ import com.google.firebase.ktx.Firebase
 import java.util.Calendar
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AltaTorosScreen(db: FirebaseFirestore,navController: NavController) {
     val siNo = remember { mutableStateOf(true) }
@@ -136,6 +140,10 @@ fun AltaTorosScreen(db: FirebaseFirestore,navController: NavController) {
                             onValueChange = {nombre = it},
                             label = {Text("Nombre")},
                             textStyle = TextStyle(color = Color.Black),
+                            colors = TextFieldDefaults.outlinedTextFieldColors(
+                                focusedBorderColor = Blue,
+                                unfocusedBorderColor = Black
+                            ),
                             modifier = Modifier
                                 .height(50.dp)
 
@@ -161,6 +169,9 @@ fun AltaTorosScreen(db: FirebaseFirestore,navController: NavController) {
                             onValueChange = {color = it},
                             label = {Text("Color")},
                             textStyle = TextStyle(color = Color.Black),
+                            colors = TextFieldDefaults.outlinedTextFieldColors(
+                                focusedBorderColor = Blue,
+                                unfocusedBorderColor = Black),
                             modifier = Modifier
                                 .height(50.dp)
                         )
@@ -254,6 +265,10 @@ fun AltaTorosScreen(db: FirebaseFirestore,navController: NavController) {
                     value = raza,
                     onValueChange = {raza = it},
                     label = {Text("Raza")},
+                    textStyle = TextStyle(color = Color.Black),
+                    colors = TextFieldDefaults.outlinedTextFieldColors(
+                        focusedBorderColor = Blue,
+                        unfocusedBorderColor = Black),
                     modifier = Modifier
                         .height(50.dp)
                         .fillMaxWidth()
@@ -291,6 +306,9 @@ fun AltaTorosScreen(db: FirebaseFirestore,navController: NavController) {
                         onValueChange = {cruza = it},
                         label = {Text("Cruza")},
                         textStyle = TextStyle(color = Color.Black),
+                        colors = TextFieldDefaults.outlinedTextFieldColors(
+                            focusedBorderColor = Blue,
+                            unfocusedBorderColor = Black),
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(50.dp)
@@ -317,6 +335,9 @@ fun AltaTorosScreen(db: FirebaseFirestore,navController: NavController) {
                     onValueChange = {cornamenta = it},
                     label = {Text("Cornamenta")},
                     textStyle = TextStyle(color = Color.Black),
+                    colors = TextFieldDefaults.outlinedTextFieldColors(
+                        focusedBorderColor = Blue,
+                        unfocusedBorderColor = Black),
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp)
@@ -340,6 +361,9 @@ fun AltaTorosScreen(db: FirebaseFirestore,navController: NavController) {
                     onValueChange = {procedencia = it},
                     label = {Text("Procedencia")},
                     textStyle = TextStyle(color = Color.Black),
+                    colors = TextFieldDefaults.outlinedTextFieldColors(
+                        focusedBorderColor = Blue,
+                        unfocusedBorderColor = Black),
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp)
@@ -370,6 +394,9 @@ fun AltaTorosScreen(db: FirebaseFirestore,navController: NavController) {
                         onValueChange = { siniiga = it },
                         label = { Text("Número SINIIGA") },
                         textStyle = TextStyle(color = Color.Black),
+                        colors = TextFieldDefaults.outlinedTextFieldColors(
+                            focusedBorderColor = Blue,
+                            unfocusedBorderColor = Black),
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
                         singleLine = true,
                         maxLines = 1,
@@ -422,6 +449,10 @@ fun AltaTorosScreen(db: FirebaseFirestore,navController: NavController) {
                             value = campania,
                             onValueChange = { campania = it },
                             placeholder = { Text("Campaña") },
+                            textStyle = TextStyle(color = Color.Black),
+                            colors = TextFieldDefaults.outlinedTextFieldColors(
+                                focusedBorderColor = Blue,
+                                unfocusedBorderColor = Black),
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .height(50.dp)

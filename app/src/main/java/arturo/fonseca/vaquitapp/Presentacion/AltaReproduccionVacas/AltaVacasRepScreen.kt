@@ -29,6 +29,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -46,6 +47,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
+import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.ui.graphics.Color.Companion.Black
+import androidx.compose.ui.graphics.Color.Companion.Blue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavController
@@ -56,6 +60,7 @@ import arturo.fonseca.vaquitapp.R
 import arturo.fonseca.vaquitapp.navigation.appScreens
 import com.google.firebase.firestore.FirebaseFirestore
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AltaVacasRepScreen(db: FirebaseFirestore, navController: NavController) {
     val siNo = remember { mutableStateOf(true) }
@@ -131,6 +136,11 @@ fun AltaVacasRepScreen(db: FirebaseFirestore, navController: NavController) {
                         value = empadre,
                         onValueChange = {empadre = it},
                         label = { Text("Empadre") },
+                        textStyle = TextStyle(color = Color.Black),
+                        colors = TextFieldDefaults.outlinedTextFieldColors(
+                            focusedBorderColor = Blue,
+                            unfocusedBorderColor = Black
+                        ),
                         modifier = Modifier.weight(1f) // Ocupa el espacio restante
                     )
                     Spacer(modifier = Modifier.width(8.dp)) // Espaciado entre el campo y el botón
@@ -158,6 +168,9 @@ fun AltaVacasRepScreen(db: FirebaseFirestore, navController: NavController) {
                             onValueChange = { semental = it },
                             label = { Text("Semental") },
                             textStyle = TextStyle(color = Color.Black),
+                            colors = TextFieldDefaults.outlinedTextFieldColors(
+                                focusedBorderColor = Blue,
+                                unfocusedBorderColor = Black),
                             enabled = siNo.value,
                             modifier = Modifier
                                 .width(240.dp)
@@ -198,6 +211,10 @@ fun AltaVacasRepScreen(db: FirebaseFirestore, navController: NavController) {
                         value = semen,
                         onValueChange = {semen = it},
                         label = { Text("Información del semen/ embrión") },
+                        textStyle = TextStyle(color = Color.Black),
+                        colors = TextFieldDefaults.outlinedTextFieldColors(
+                            focusedBorderColor = Blue,
+                            unfocusedBorderColor = Black),
                         modifier = Modifier.weight(1f)
                     )
                 }
@@ -259,6 +276,10 @@ fun AltaVacasRepScreen(db: FirebaseFirestore, navController: NavController) {
                         value = parto,
                         onValueChange = {parto = it},
                         label = { Text("Cantidad de partos") },
+                        textStyle = TextStyle(color = Color.Black),
+                        colors = TextFieldDefaults.outlinedTextFieldColors(
+                            focusedBorderColor = Blue,
+                            unfocusedBorderColor = Black),
                         modifier = Modifier.weight(1f)
                     )
 
@@ -268,6 +289,10 @@ fun AltaVacasRepScreen(db: FirebaseFirestore, navController: NavController) {
                     value = estado,
                     onValueChange = {estado = it},
                     label = { Text("Estado") },
+                    textStyle = TextStyle(color = Color.Black),
+                    colors = TextFieldDefaults.outlinedTextFieldColors(
+                        focusedBorderColor = Blue,
+                        unfocusedBorderColor = Black),
                     modifier = Modifier.fillMaxWidth()
                 )
 
@@ -275,6 +300,10 @@ fun AltaVacasRepScreen(db: FirebaseFirestore, navController: NavController) {
                     value = observacion,
                     onValueChange = {observacion = it},
                     label = { Text("Observaciones") },
+                    textStyle = TextStyle(color = Color.Black),
+                    colors = TextFieldDefaults.outlinedTextFieldColors(
+                        focusedBorderColor = Blue,
+                        unfocusedBorderColor = Black),
                     modifier = Modifier.fillMaxWidth()
                         .height(120.dp)
                 )
